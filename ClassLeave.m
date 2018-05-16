@@ -18,3 +18,6 @@ classes(2,243:tam) = 1; %amostras da classe 1
 acertos = leaveoneout(amostras, classes);
 taxa = (acertos/917)*100;
 fprintf('Porcentagem de acertos sem a normalização: %.4f\n',taxa);
+
+%retorna os dados padronizados
+X = normaliza(amostras)
