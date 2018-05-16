@@ -8,9 +8,9 @@ function acertos = leaveoneout(amostras, classes)
 [~,tam] = size(amostras);
 acertos = 0;
 for i=1:tam
-    X = amostras; %x recebe todas as amostras
+    X = amostras; %X recebe todas as amostras
     X(:,i) = []; %removemos a amostra i para teste
-    Y = classes; %class recebe o rotulo das amostras
+    Y = classes; %Y recebe o rotulo das amostras
     Y(:,i) = []; %retiramos o rotulo da amostra teste
     
     A = (Y*X')/(X*X'); %calculo da matriz transformação
@@ -26,4 +26,4 @@ for i=1:tam
         end    
     end  
 end
-acertos;
+acertos;%retorna acertos

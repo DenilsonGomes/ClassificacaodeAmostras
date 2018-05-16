@@ -12,4 +12,5 @@ for i=1:tam %para todos os vetores
     end
     %todos os atributos do vetor i foram normalizados
 end
-X;
+%todos os dados foram normalizados
+X;%retorna os dados normalizados
