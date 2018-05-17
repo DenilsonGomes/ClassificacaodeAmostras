@@ -25,3 +25,7 @@ acertos = leaveoneout(X, classes); %calcula o numero de acertos
 taxac = (acertos/917)*100;%calcula o percentual de acerto com a normalização
 fprintf('Porcentagem de acerto sem a normalização: %.4f\n',taxa);%exibe o percentual de acertos
 fprintf('Porcentagem de acerto com a normalização: %.4f\n',taxac);%exibe o percentual de acertos
+
+%knn
+for i=1:10 %10 execuções de knn
+    [X,Y] = permuta(amostras, classes); %

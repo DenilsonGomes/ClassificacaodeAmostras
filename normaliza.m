@@ -1,7 +1,7 @@
 %Autor: Denilson Gomes Vaz da Silva
 %Graduando em Engenharia da Computação
 %Inteligência Computacional - Dr. Jarbas Joaci
-%Função que padroniza os dados
+%Função que normaliza os dados
 
 %função recebe os dados e os retorna com media zero e variança unitaria
 function X = normaliza(dados) 
