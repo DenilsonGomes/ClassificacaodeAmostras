@@ -4,10 +4,10 @@
 %Função que executa o leave-one-out e retorna o numero de acertos
 
 %função recebe (amostras, classes) e retorna o numero de acertos
-function acertos = leaveoneout(amostras, classes)
-[~,tam] = size(amostras);
-acertos = 0;
-for i=1:tam
+function taxa = leaveoneout(amostras, classes)
+[~,tam] = size(amostras); %recebe o tamanho das amostras
+acertos = 0; %inicia acertos em 0
+for i=1:tam %para todas as amostras
     X = amostras; %X recebe todas as amostras
     X(:,i) = []; %removemos a amostra i para teste
     Y = classes; %Y recebe o rotulo das amostras
@@ -26,4 +26,4 @@ for i=1:tam
         end    
     end  
 end
-acertos;%retorna acertos
+taxa = acertos*100/tam;%retorna a taxa de acertos

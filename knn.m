@@ -4,7 +4,7 @@
 %Função que executa o KNN
 
 %função recebe (dados, numeros de vizinhos) e retorna o numero de acertos
-function acertos = knn(amostras, classes, k)
+function taxa = knn(amostras, classes, k)
 [s,tam] = size(amostras);%tam recebe o numero de amostras e s o numero de atributos
 a = ceil(tam*30/100);%a é o numero que separa a amostra em 30% e 70%
 acertos = 0;
@@ -31,3 +31,4 @@ for i=1:a %para os 30% das asmostras (Testes)
         acertos = acertos + 1; %acrescentamos acertos
     end
 end
+taxa = acertos*100/a; %retorna a taxa de acertos

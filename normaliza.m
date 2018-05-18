@@ -11,6 +11,5 @@ for i=1:tam %para todos os vetores
         X(j,i) = (dados(j,i) - mean(dados(:,i)))/std(dados(:,i)); %normaliza o dado
     end
     %todos os atributos do vetor i foram normalizados
-end
-%todos os dados foram normalizados
+end %todos os dados foram normalizados
 X;%retorna os dados normalizados
