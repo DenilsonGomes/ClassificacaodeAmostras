@@ -3,7 +3,7 @@
 %Inteligência Computacional - Dr. Jarbas Joaci
 %Função que executa o leave-one-out e retorna o numero de acertos
 
-%função recebe (amostras, classes) e retorna o numero de acertos
+%função recebe (amostras, classes) e retorna a taxa de acertos
 function taxa = leaveoneout(amostras, classes)
 [~,tam] = size(amostras); %recebe o tamanho das amostras
 acertos = 0; %inicia acertos em 0
