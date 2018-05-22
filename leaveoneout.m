@@ -13,6 +13,7 @@ for i=1:tam %para todas as amostras
     Y = classes; %Y recebe o rotulo das amostras
     Y(:,i) = []; %retiramos o rotulo da amostra teste
     
+    %A = (Y*X')*(X*X')^(-1); %calculo da matriz transformação
     A = (Y*X')/(X*X'); %calculo da matriz transformação
     y = A*(amostras(:,i)); %calculo do vetor saida y
     

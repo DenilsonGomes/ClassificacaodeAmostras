@@ -25,20 +25,14 @@ taxac = leaveoneout(X, classes);%calcula a taxa de acerto com a normalização
 fprintf('Taxa de acerto do leave-one-out sem a normalização: %.4f\n',taxa);%exibe o percentual de acertos
 fprintf('Taxa de acerto do leave-one-out com a normalização: %.4f\n',taxac);%exibe o percentual de acertos
 
-%knn sem normalizar os dados
-taxa = 0; %taxa = 0
+taxa = 0;taxac = 0; %taxa = 0
 for i=1:10 %10 execuções de knn
     [X1,Y] = permuta(amostras, classes); %permuta as amostras e as classes
-    taxa = taxa + knn(X1,Y,k); %soma a taxa das 10 execuções
+    taxa = taxa + knn(X1,Y,k); %soma a taxa das 10 execuções (knn sem normalizar os dados)
+    [X,Y] = permuta(X, classes); %permuta as amostras e as classes
+    taxac = taxac + knn(X,Y,k); %soma a taxa das 10 execuções (knn com os dados normalizados)
 end
 taxa = taxa/10; %taxa media sem a normalização igual a soma das taxas divida por 10
-
-%knn com os dados normalizados
-taxac = 0; %taxa = 0
-for i=1:10 %10 execuções de knn
-    [X,Y] = permuta(X, classes); %permuta as amostras e as classes
-    taxac = taxac + knn(X,Y,k); %soma a taxa das 10 execuções
-end
 taxac = taxac/10; %taxa media com a normalização igual a soma das taxas divida por 10
 fprintf('Taxa de acerto do knn sem a normalização: %.4f\n',taxa);%exibe o percentual de acertos
 fprintf('Taxa de acerto do knn com a normalização: %.4f\n',taxac);%exibe o percentual de acertos
